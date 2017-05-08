@@ -45,6 +45,10 @@ public class Atlet {
         return weight;
     }
     
+    public void setTotalScore(int x){
+        this.totalScore = x;
+    }
+    
     public int doSnatch(int score){
         if(score > this.snatchScore){
             this.snatchScore = score;
