@@ -3,6 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package TableController;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -10,65 +14,51 @@
  */
 public class Atlet {
     
-    private String name;
-    private int age;
-    private int weight;
-    private String nationality;
-    private int snatchScore;
-    private int cleanJerkScore;
-    private int totalScore;
-    private int numberAthlete;
+    private SimpleStringProperty nomorUrut;
+    private SimpleStringProperty nama;
+    private SimpleStringProperty age;
+    private SimpleStringProperty nationality;
+    private SimpleStringProperty kelas;
+    private SimpleStringProperty beratBadan;
+    private SimpleStringProperty gender;
 
-    public Atlet(String name,int age,int weight,String nationality) {
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.nationality = nationality;
-        this.snatchScore = 0;
-        this.cleanJerkScore = 0;
-        this.totalScore = 0;
+    public Atlet(String nomorUrut, String nama, String age, String nationality,String kelas, String beratBadan, String gender) {
+        this.nomorUrut = new SimpleStringProperty(nomorUrut);
+        this.nama = new SimpleStringProperty(nama);
+        this.age = new SimpleStringProperty(age);
+        this.nationality = new SimpleStringProperty(nationality);
+        this.kelas = new SimpleStringProperty(kelas);
+        this.beratBadan = new SimpleStringProperty(beratBadan);
+        this.gender = new SimpleStringProperty(gender);
+    }
+    
+
+    public StringProperty getBeratBadan() {
+        return beratBadan;
     }
 
-    public int getAge() {
+    public StringProperty getKelas() {
+        return kelas;
+    }
+
+    public StringProperty getNama() {
+        return nama;
+    }
+
+    public StringProperty getAge() {
         return age;
     }
 
-    public String getName() {
-        return name;
+    public StringProperty getNomorUrut() {
+        return nomorUrut;
     }
 
-    public String getNationality() {
+    public StringProperty getGender() {
+        return gender;
+    }
+
+    public StringProperty getNationality() {
         return nationality;
     }
-
-    public int getWeight() {
-        return weight;
-    }
-    
-    public void setTotalScore(int x){
-        this.totalScore = x;
-    }
-    
-    public int doSnatch(int score){
-        if(score > this.snatchScore){
-            this.snatchScore = score;
-        }
-        return this.snatchScore;
-    }
-    public int doCleanJerk(int score){
-        if(score > this.cleanJerkScore){
-           this.cleanJerkScore = score;
-        }
-        return this.cleanJerkScore;
-    }
-    public int getTotalScore(){
-        this.totalScore = this.snatchScore + this.cleanJerkScore;
-        return this.totalScore;
-    }
-    public void addNumberAthlete(int num){
-        this.numberAthlete = num;
-    }
-    public int getAthleteNumber(){
-        return this.numberAthlete;
-    }
+  
 }
